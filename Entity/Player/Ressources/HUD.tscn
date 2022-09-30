@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Entity/Player/Ressources/LifeEmpty.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Img/Life_Full.png" type="Texture" id=2]
+[ext_resource path="res://Img/BG_Violet.png" type="Texture" id=3]
+[ext_resource path="res://Img/Weapon1.png" type="Texture" id=4]
+[ext_resource path="res://Img/Weapon2.png" type="Texture" id=5]
+[ext_resource path="res://Img/Weapon3.png" type="Texture" id=6]
+[ext_resource path="res://Img/Weapon4.png" type="Texture" id=7]
+[ext_resource path="res://Entity/Player/Ressources/HUD.gd" type="Script" id=8]
+[ext_resource path="res://Img/Coin.PNG" type="Texture" id=9]
+[ext_resource path="res://Img/Score.png" type="Texture" id=10]
+[ext_resource path="res://Scene/ScreenPause.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Img/Weapon6.png" type="Texture" id=12]
+[ext_resource path="res://Img/Weapon5.png" type="Texture" id=13]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 8 )
+
+[node name="Indice" type="Node" parent="."]
+
+[node name="0" type="Sprite" parent="Indice"]
+position = Vector2( 48, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="1" type="Sprite" parent="Indice"]
+position = Vector2( 96, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="2" type="Sprite" parent="Indice"]
+position = Vector2( 144, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="3" type="Sprite" parent="Indice"]
+position = Vector2( 192, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="4" type="Sprite" parent="Indice"]
+position = Vector2( 240, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="5" type="Sprite" parent="Indice"]
+position = Vector2( 288, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="6" type="Sprite" parent="Indice"]
+position = Vector2( 336, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="7" type="Sprite" parent="Indice"]
+position = Vector2( 384, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="8" type="Sprite" parent="Indice"]
+position = Vector2( 432, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="9" type="Sprite" parent="Indice"]
+position = Vector2( 480, 64 )
+scale = Vector2( 4, 5.33333 )
+texture = ExtResource( 2 )
+
+[node name="Armes" type="Node" parent="."]
+
+[node name="Arme1" type="Sprite" parent="Armes"]
+position = Vector2( 1800, 1000 )
+scale = Vector2( 6.99995, 5.4444 )
+texture = ExtResource( 4 )
+hframes = 4
+
+[node name="Arme2" type="Sprite" parent="Armes"]
+position = Vector2( 1792, 1000 )
+scale = Vector2( 6.99999, 6.6111 )
+texture = ExtResource( 5 )
+
+[node name="Arme3" type="Sprite" parent="Armes"]
+position = Vector2( 1800, 1000 )
+scale = Vector2( 8, 6.28571 )
+texture = ExtResource( 6 )
+
+[node name="Arme4" type="Sprite" parent="Armes"]
+position = Vector2( 1800, 1000 )
+scale = Vector2( 4.2, 4.2 )
+texture = ExtResource( 12 )
+
+[node name="Arme5" type="Sprite" parent="Armes"]
+position = Vector2( 1792, 1000 )
+scale = Vector2( 3.20001, 3.20001 )
+texture = ExtResource( 13 )
+
+[node name="ArmeA" type="Sprite" parent="Armes"]
+position = Vector2( 1792, 1000 )
+scale = Vector2( 8, 6.4 )
+texture = ExtResource( 7 )
+
+[node name="LifeEmpty" parent="." instance=ExtResource( 1 )]
+
+[node name="BG_Violet" type="Sprite" parent="."]
+position = Vector2( 1312, 84 )
+scale = Vector2( 5, 7.5 )
+texture = ExtResource( 3 )
+
+[node name="BG_Violet2" type="Sprite" parent="."]
+position = Vector2( 1746, 84 )
+scale = Vector2( 4.6875, 7.5 )
+texture = ExtResource( 3 )
+
+[node name="Coin" type="Sprite" parent="."]
+position = Vector2( 1200, 84 )
+scale = Vector2( 3.2, 3.2 )
+texture = ExtResource( 9 )
+
+[node name="Gold" type="Label" parent="."]
+margin_left = 1240.0
+margin_top = 56.0
+margin_right = 1448.0
+margin_bottom = 112.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score2" type="Sprite" parent="."]
+position = Vector2( 1640, 84 )
+scale = Vector2( 3.2, 3.2 )
+texture = ExtResource( 10 )
+
+[node name="Score" type="Label" parent="."]
+margin_left = 1664.0
+margin_top = 56.0
+margin_right = 1872.0
+margin_bottom = 111.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenPause" parent="." instance=ExtResource( 11 )]

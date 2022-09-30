@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Img/BG_Menu.png" type="Texture" id=1]
+[ext_resource path="res://Scene/ScreenTutoriel.gd" type="Script" id=2]
+[ext_resource path="res://Img/Font/ZQSD.png" type="Texture" id=3]
+[ext_resource path="res://Img/Font/Deplacement.png" type="Texture" id=4]
+[ext_resource path="res://Img/Font/Souris.png" type="Texture" id=5]
+[ext_resource path="res://Img/Font/Tirer.png" type="Texture" id=6]
+[ext_resource path="res://Img/Font/Chiffre.png" type="Texture" id=7]
+[ext_resource path="res://Img/Font/Armes.png" type="Texture" id=8]
+[ext_resource path="res://Img/Font/A.png" type="Texture" id=9]
+[ext_resource path="res://Img/Font/E.png" type="Texture" id=10]
+[ext_resource path="res://Img/Font/Ultim.png" type="Texture" id=11]
+[ext_resource path="res://Img/Font/F.png" type="Texture" id=12]
+[ext_resource path="res://Img/Font/Shop.png" type="Texture" id=13]
+[ext_resource path="res://Img/Font/Dash.png" type="Texture" id=14]
+[ext_resource path="res://Img/Font/Shift.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.701961, 0, 0.733333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.956863, 0, 1, 1 )
+
+[node name="ScreenTutoriel" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BG_Menu" type="Sprite" parent="."]
+position = Vector2( 959.889, 545 )
+scale = Vector2( 1.0103, 1.02778 )
+texture = ExtResource( 1 )
+
+[node name="BT_Play" type="Button" parent="."]
+margin_left = 1560.0
+margin_top = 970.0
+margin_right = 1880.0
+margin_bottom = 1040.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "JOUER"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="BT_Retour" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 970.0
+margin_right = 360.0
+margin_bottom = 1040.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "RETOUR"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ZQSD" type="Sprite" parent="."]
+position = Vector2( 200.127, 165 )
+scale = Vector2( 5.00528, 5.15152 )
+texture = ExtResource( 3 )
+
+[node name="Deplacement" type="Sprite" parent="."]
+position = Vector2( 625, 165 )
+scale = Vector2( 6.8, 6.8 )
+texture = ExtResource( 4 )
+
+[node name="Souris" type="Sprite" parent="."]
+position = Vector2( 200, 400 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+
+[node name="Chiffre" type="Sprite" parent="."]
+position = Vector2( 1220, 150 )
+scale = Vector2( 10.7692, 10.7692 )
+texture = ExtResource( 7 )
+
+[node name="Armes" type="Sprite" parent="."]
+position = Vector2( 1630, 160 )
+scale = Vector2( 8.06528, 8.06528 )
+texture = ExtResource( 8 )
+
+[node name="Tirer" type="Sprite" parent="."]
+position = Vector2( 490, 400 )
+scale = Vector2( 7.25347, 7.25347 )
+texture = ExtResource( 6 )
+
+[node name="A" type="Sprite" parent="."]
+position = Vector2( 1203, 393 )
+scale = Vector2( 7.125, 7.125 )
+texture = ExtResource( 9 )
+
+[node name="E" type="Sprite" parent="."]
+position = Vector2( 1350, 400 )
+scale = Vector2( 6.25, 6.81816 )
+texture = ExtResource( 10 )
+
+[node name="Ultim" type="Sprite" parent="."]
+position = Vector2( 1620, 400 )
+scale = Vector2( 7.68923, 7.68923 )
+texture = ExtResource( 11 )
+
+[node name="Shop" type="Sprite" parent="."]
+position = Vector2( 588.156, 650 )
+scale = Vector2( 11.0087, 10.9062 )
+texture = ExtResource( 13 )
+
+[node name="F" type="Sprite" parent="."]
+position = Vector2( 220, 640 )
+scale = Vector2( 9.3125, 9.3125 )
+texture = ExtResource( 12 )
+
+[node name="Shift" type="Sprite" parent="."]
+position = Vector2( 1280, 640 )
+scale = Vector2( 12.0312, 12.0312 )
+texture = ExtResource( 15 )
+
+[node name="Dash" type="Sprite" parent="."]
+position = Vector2( 1620, 650 )
+scale = Vector2( 8.74999, 8.74999 )
+texture = ExtResource( 14 )
+
+[connection signal="pressed" from="BT_Play" to="." method="_on_BT_Play_pressed"]
+[connection signal="pressed" from="BT_Retour" to="." method="_on_BT_Retour_pressed"]
