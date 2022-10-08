@@ -16,7 +16,7 @@ Technology : Godot
 
 <h2>Goal</h2>
 
-Project is a wave surviving game in a cyberpunk univers. Player is a cybord killing robots like roachs and worms. Starting with a sword, he can press F to acces a market and buy new weapons. Kiled enemies give coins and score. Player can switch weapon between 1 (sword) and 5 (shotgun). Once charged, a more powerfull weapon can be used by pressing A. A dash is available with SHIFT. 
+Project is a wave surviving game in a cyberpunk univers. Player is a cybord killing robots like roachs and worms. Starting with a sword, he can press F to acces a market and buy new weapons. Kiled enemies give coins and score. Player can switch weapon between 1 (sword) and 5 (shotgun). Once charged, a more powerfull weapon can be used by pressing A. A dash is available with SHIFT.  The mouse weel allows to zoom in and out 
 
 --------------------
 
@@ -37,6 +37,8 @@ Project is a wave surviving game in a cyberpunk univers. Player is a cybord kill
         <li>Score saving</li>
         <li>Player's death</li>
         <li>Wave system</li>
+        <li>New enemies</li>
         <li>Boss fight</li>
+        <li>Screen adaptation</li>
         <li>Lan cooperation ?</li>
     </ul>

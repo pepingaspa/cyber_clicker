@@ -6,14 +6,14 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.701961, 0, 0.733333, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.956863, 0, 1, 1 )
 
 [node name="ScreenTitre" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="BG_Menu" type="Sprite" parent="."]
-position = Vector2( 960, 545 )
+position = Vector2( 961.587, 545 )
 scale = Vector2( 1.01042, 1.02778 )
 texture = ExtResource( 1 )
 
@@ -23,7 +23,7 @@ margin_top = 440.0
 margin_right = 1120.0
 margin_bottom = 510.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 text = "JOUER"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -36,7 +36,7 @@ margin_top = 530.0
 margin_right = 1120.0
 margin_bottom = 600.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 text = "TUTORIEL"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -49,13 +49,12 @@ margin_top = 620.0
 margin_right = 1120.0
 margin_bottom = 690.0
 custom_styles/hover = SubResource( 1 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 text = "QUITTER"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
-
 [connection signal="pressed" from="BT_Play" to="." method="_on_BT_Play_pressed"]
 [connection signal="pressed" from="BT_Tuto" to="." method="_on_BT_Tuto_pressed"]
 [connection signal="pressed" from="BT_Quit" to="." method="_on_BT_Quit_pressed"]
