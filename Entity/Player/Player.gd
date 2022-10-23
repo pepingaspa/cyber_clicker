@@ -13,7 +13,9 @@ var tabArme = [
 				["ArmeA", preload("res://Entity/Arme/ArmeA.tscn"), 3]
 			]
 
+
 var life = 10
+var living = true
 export var speed = 150
 var state = move
 var degat = 0
@@ -88,9 +90,12 @@ func equip(target):
 			emit_signal("change", target)
 
 func take_damage(damage):
-	life = life - damage
-	$HUD.update_life(life)
-	if life <= 0 :
-		queue_free()
-	else :
-		$AnimationPlayer.play("RedBlink")
+	if living :
+		life = life - damage
+		$HUD.update_life(life)
+		if life <= 0 :
+			living = false
+			$Hurtboxe.visible = false
+			$HUD.death()
+		else :
+			$AnimationPlayer.play("RedBlink")

@@ -23,7 +23,7 @@ func _process(_delta):
 		can_spawn = true
 		#Match sur le type d'ennemi à spawner
 		var instance
-		var type = rng.randi_range(4,4)
+		var type = rng.randi_range(1,4)
 		match(type):
 			1:
 				instance = cafardA.instance()

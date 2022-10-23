@@ -55,6 +55,7 @@ tracks/0/keys = {
 }
 
 [node name="CafardB" type="KinematicBody2D"]
+collision_mask = 65
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -62,7 +63,7 @@ rotation = -1.57079
 scale = Vector2( 0.597015, 0.597015 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -44,13 +44,16 @@ func _on_Timer_timeout():
 		target_pos = Vector2.ZERO
 	
 	if target_pos.length() <= detect_zone and bounce_cd == 0:
+		$Timer.wait_time = 0.25
 		direction = target_pos.normalized()
 	elif bounce_cd > 0 :
+		$Timer.wait_time = 0.5
 		var angle = rng.randf_range(-PI/2, PI/2)
 		direction = -direction.rotated(angle)
 		bounce_cd -= 1
 		add = true
 	else :
+		$Timer.wait_time = 0.5
 		var choice = rng.randf_range(0,1)
 		if choice < 0.3 :
 			direction = Vector2.ZERO

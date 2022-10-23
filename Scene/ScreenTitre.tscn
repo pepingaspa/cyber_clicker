@@ -55,6 +55,7 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
 [connection signal="pressed" from="BT_Play" to="." method="_on_BT_Play_pressed"]
 [connection signal="pressed" from="BT_Tuto" to="." method="_on_BT_Tuto_pressed"]
 [connection signal="pressed" from="BT_Quit" to="." method="_on_BT_Quit_pressed"]

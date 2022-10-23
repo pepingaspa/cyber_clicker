@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -23,8 +22,8 @@ config/icon="res://icon.png"
 
 window/size/width=1920
 window/size/height=1080
+window/size/resizable=false
 window/size/borderless=true
-window/size/fullscreen=true
 
 [input]
 
@@ -122,6 +121,8 @@ shift={
 2d_physics/layer_4="EnemyHit"
 2d_physics/layer_5="EnemyHurt"
 2d_physics/layer_6="Weapon"
+2d_physics/layer_7="Wall_Limit"
+2d_physics/layer_8="DroneCollision"
 
 [physics]
 

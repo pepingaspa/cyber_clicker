@@ -1,15 +1,20 @@
 extends KinematicBody2D
 
 var life = 8
-var degat = 3
+var degat = 2
 var speed = 100
+var speed_bullet = 500
 var detect_zone = 800
+var fire_zone = 200
 var rng = RandomNumberGenerator.new()
 var bounce_cd = 0
 var target_pos = Vector2.ZERO
 var direction = Vector2.DOWN
 var add = true
 var score = 15
+var can_fire = true
+
+var bullet = preload("res://Entity/Arme/Balles/BalleE.tscn")
 
 var gold
 
@@ -43,14 +48,24 @@ func _on_Timer_timeout():
 	else :
 		target_pos = Vector2.ZERO
 	
-	if target_pos.length() <= detect_zone and bounce_cd == 0:
+	if target_pos.length() in [fire_zone, detect_zone] and bounce_cd == 0:
+		$Timer.wait_time = 0.5
 		direction = target_pos.normalized()
 	elif bounce_cd > 0 :
+		$Timer.wait_time = 0.5
 		var angle = rng.randf_range(-PI/2, PI/2)
 		direction = -direction.rotated(angle)
 		bounce_cd -= 1
 		add = true
+	elif target_pos.length() <= fire_zone :
+		$Timer.wait_time = 0.25
+		direction = Vector2.ZERO
+		if get_tree().root.has_node("ScreenArene/Player"):
+			look_at(player.global_position)
+		if can_fire :
+			fire()
 	else :
+		$Timer.wait_time = 0.5
 		var choice = rng.randf_range(0,1)
 		if choice < 0.3 :
 			direction = Vector2.ZERO
@@ -59,6 +74,18 @@ func _on_Timer_timeout():
 		else :
 			var angle = rng.randf_range(0, 2 * PI)
 			direction = Vector2(1.0, 0.0).rotated(angle)
+
+#Fonction de tire du drone
+func fire():
+	var instance = bullet.instance()
+	instance.global_position = $Position2D.global_position
+	instance.rotation_degrees = rotation_degrees
+	instance.apply_impulse(Vector2(), Vector2(speed_bullet, 0).rotated(deg2rad(rotation_degrees)))
+	instance.degat = degat
+	get_tree().root.add_child(instance)
+	can_fire = false
+	yield(get_tree().create_timer(1.0), "timeout")
+	can_fire = true
 
 #MAJ de l'orientation lors du déplacement
 func update_orientation():

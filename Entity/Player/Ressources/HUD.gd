@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var instance = preload("res://Scene/ScreenDeath.tscn").instance()
+
 var tabArme = [
 	["Arme1"],
 	["Arme2"],
@@ -22,12 +24,12 @@ func update_life(life) :
 		else :
 			child.visible = true 
 
-func update_gold(gold):
-	var tmp = int($Gold.text) + gold
+func update_gold(ajout):
+	var tmp = int($Gold.text) + ajout
 	$Gold.text = str(tmp)
 
-func update_score(score):
-	var tmp = int($Score.text) + score
+func update_score(ajout):
+	var tmp = int($Score.text) + ajout
 	$Score.text = str(tmp)
 
 func update_view(arme):
@@ -37,3 +39,9 @@ func update_view(arme):
 			tmp.visible = true
 		else :
 			tmp.visible = false
+
+func death():
+	get_tree().root.add_child(instance)
+	instance.modif($Score.text, $Gold.text)
+	if get_tree().root.has_node("ScreenArene"):
+		get_tree().root.get_node("ScreenArene").free()
